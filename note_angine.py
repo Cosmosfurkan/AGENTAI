@@ -6,10 +6,11 @@ note_file = os.path.join("data", "notes.txt")
 
 def save_note(note:str):
     if not os.path.exists(note_file):
-        open(note_file, "w")
+        with open(note_file, "w"):
+            pass
 
     with open(note_file, "a") as f:
-        f.writtelines([note + "\n"])
+        f.write(note + "\n")
 
     return "note saved"
 
